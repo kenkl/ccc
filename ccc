@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cd /usr/local/bin/ccc
+. .env/bin/activate
+./ccc.py $@
+
