@@ -8,4 +8,4 @@ Also present is a BASH script - ccc - that serves as a wrapper for ccc.py, setti
 
 For context: on my workstation, I symlink the ccc directory where it lives to /usr/local/bin/ccc and then add it to $PATH, making the utility always available.
 
-2024-08-07: Because I hobble issuer/hostname checks for trusting, it's sometimes useful to see the CN (CommonName) presented by the cert when checking dates, so I've added that.
+2024-08-07: It's often useful to see the CN (CommonName) presented by the cert, as well as SANs, so I've added that. 
