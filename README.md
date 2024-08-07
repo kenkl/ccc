@@ -7,3 +7,5 @@ ccc.py uses pyOpenSSL (see requirements.txt) to retrieve a certificate presented
 Also present is a BASH script - ccc - that serves as a wrapper for ccc.py, setting the working directory, activating the Python venv (which lives in .venv, but not included here, of course), and passing all parameters to ccc.py
 
 For context: on my workstation, I symlink the ccc directory where it lives to /usr/local/bin/ccc and then add it to $PATH, making the utility always available.
+
+2024-08-07: Because I hobble issuer/hostname checks for trusting, it's sometimes useful to see the CN (CommonName) presented by the cert when checking dates, so I've added that.

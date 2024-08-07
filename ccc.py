@@ -27,6 +27,7 @@ try:
             
             cert_expire_date_as_string = x509.get_notAfter().decode('ascii')
             cert_issue_date_as_string = x509.get_notBefore().decode('ascii')
+            cert_cn = x509.get_subject().CN
             cert_issuer = x509.get_issuer().CN
             now = datetime.now()
             cert_expire_date = datetime.strptime(cert_expire_date_as_string, '%Y%m%d%H%M%SZ')
@@ -41,7 +42,7 @@ except socket.gaierror:
 except Exception as e:
     print(f"ERROR - {e}.")
 else:
-    print(f"{hostname}:{port} ({ipaddr}):  \nIssuer: {cert_issuer}\nIssued: {cert_issue_date}\nExpires: {cert_expire_date}\n{days_left} days remaining.\n")
+    print(f"{hostname}:{port} ({ipaddr}):\nCN: {cert_cn}  \nIssuer: {cert_issuer}\nIssued: {cert_issue_date}\nExpires: {cert_expire_date}\n{days_left} days remaining.\n")
 
 
 
